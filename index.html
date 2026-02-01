@@ -3,14 +3,14 @@
 <head>
 	<script src="https://t.contentsquare.net/uxa/9c1b74652b8ba.js"></script>
 	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0NQ4THBSCP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-0NQ4THBSCP"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-0NQ4THBSCP');
+	</script>
 
-  gtag('config', 'G-0NQ4THBSCP');
-</script>
     <meta charset="UTF-8">
     <title>BookNest | Online Book Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,10 +46,10 @@
         }
 
         .books {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-	}
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
 
         .book-card {
             background-color: white;
@@ -96,25 +96,17 @@
         button:hover {
             background-color: #3a2266;
         }
-
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-        }
     </style>
 </head>
 
 <body>
 
 <header>
-    <h1> Book Nest</h1>
+    <h1>Book Nest</h1>
     <h2>Discover books you’ll love</h2>
 </header>
 
-<section>
+<section id="store">
     <h2>Available Books</h2>
 
     <div class="books">
@@ -124,7 +116,7 @@
             <h3>Atomic Habits</h3>
             <p>James Clear</p>
             <p class="price">₹399</p>
-            <button>Buy Now</button>
+            <button onclick="showThankYou()">Buy Now</button>
         </div>
 
         <div class="book-card">
@@ -132,7 +124,7 @@
             <h3>A Good Girl's Guide to Murder</h3>
             <p>Holly Jackson</p>
             <p class="price">₹349</p>
-            <button>Buy Now</button>
+            <button onclick="showThankYou()">Buy Now</button>
         </div>
 
         <div class="book-card">
@@ -140,7 +132,7 @@
             <h3>The Alchemist</h3>
             <p>Paulo Coelho</p>
             <p class="price">₹299</p>
-            <button>Buy Now</button>
+            <button onclick="showThankYou()">Buy Now</button>
         </div>
 
         <div class="book-card">
@@ -148,7 +140,7 @@
             <h3>Harry Potter and the Philosopher's Stone</h3>
             <p>J. K. Rowling</p>
             <p class="price">₹499</p>
-            <button>Buy Now</button>
+            <button onclick="showThankYou()">Buy Now</button>
         </div>
 
         <div class="book-card">
@@ -156,7 +148,7 @@
             <h3>The Mystery of the Missing Necklace</h3>
             <p>Fiction</p>
             <p class="price">₹279</p>
-            <button>Buy Now</button>
+            <button onclick="showThankYou()">Buy Now</button>
         </div>
 
         <div class="book-card">
@@ -164,7 +156,7 @@
             <h3>The Midnight Library</h3>
             <p>Matt Haig</p>
             <p class="price">₹379</p>
-            <button>Buy Now</button>
+            <button onclick="showThankYou()">Buy Now</button>
         </div>
 
         <div class="book-card">
@@ -172,7 +164,7 @@
             <h3>One of Us Is Lying</h3>
             <p>Karen M. McManus</p>
             <p class="price">₹359</p>
-            <button>Buy Now</button>
+            <button onclick="showThankYou()">Buy Now</button>
         </div>
 
         <div class="book-card">
@@ -180,13 +172,27 @@
             <h3>And Then There Were None</h3>
             <p>Agatha Christie</p>
             <p class="price">₹329</p>
-            <button>Buy Now</button>
+            <button onclick="showThankYou()">Buy Now</button>
         </div>
 
     </div>
 </section>
 
+<!-- THANK YOU SCREEN -->
+<div id="thankyou-screen" style="display:none; height:100vh; background:#f4f4f4; align-items:center; justify-content:center; text-align:center;">
+    <div>
+        <h1 style="color:#4b2e83;">Thank you for buying our product!</h1>
+        <p>Your order has been successfully placed.</p>
+    </div>
+</div>
+
+<script>
+    function showThankYou() {
+        document.getElementById("store").style.display = "none";
+        document.querySelector("header").style.display = "none";
+        document.getElementById("thankyou-screen").style.display = "flex";
+    }
+</script>
+
 </body>
 </html>
-
-
